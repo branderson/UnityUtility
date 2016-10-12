@@ -1,10 +1,11 @@
 using UnityEditor;
 using UnityEngine;
+
 #if UNITY_EDITOR
 
 #endif
 
-namespace Assets.Utility
+namespace Assets.Utility.NestedPrefabs
 {
     /// <summary>
     /// [Unfinished] Allows prefabs to sync there changes back to their prefabs and from their prefabs when nested

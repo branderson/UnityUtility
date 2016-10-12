@@ -1,6 +1,7 @@
+using Assets.Utility.Static;
 using UnityEngine;
 
-namespace Assets.Utility
+namespace Assets.Utility.Behaviours
 {
     public class ConstrainPosition2D : MonoBehaviour
     {

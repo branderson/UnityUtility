@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.Utility
+namespace Assets.Utility.Behaviours
 {
     /// <summary>
     /// Destroy the object if object with its tag already exists in scene

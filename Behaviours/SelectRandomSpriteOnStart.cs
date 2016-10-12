@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Utility
+namespace Assets.Utility.Behaviours
 {
     public class SelectRandomSpriteOnStart : MonoBehaviour
     {

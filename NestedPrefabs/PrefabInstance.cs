@@ -6,7 +6,7 @@ using UnityEngine;
 #if UNITY_EDITOR
 #endif
 
-namespace Assets.Utility
+namespace Assets.Utility.NestedPrefabs
 {
     [ExecuteInEditMode]
     public class PrefabInstance : MonoBehaviour

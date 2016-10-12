@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.Utility
+namespace Assets.Utility.NestedPrefabs
 {
     /// <summary>
     /// [Unfinished] Maintains changes to spawned prefabs, while automatically updating the object to 

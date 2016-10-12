@@ -1,4 +1,4 @@
-namespace Assets.Utility
+namespace Assets.Utility.Static
 {
     public class MathExtensions
     {

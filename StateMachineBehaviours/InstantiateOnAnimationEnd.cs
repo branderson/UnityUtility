@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.Utility
+namespace Assets.Utility.StateMachineBehaviours
 {
     public class InstantiateOnAnimationEnd : StateMachineBehaviour
     {
