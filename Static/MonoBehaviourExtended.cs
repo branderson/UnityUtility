@@ -36,6 +36,35 @@ namespace Assets.Utility.Static
                 transform.position.z + z);
         }
 
+        static public void AdjustPosition(this Transform transform, Vector2 amount)
+        {
+            transform.position = new Vector3(transform.position.x + amount.x, 
+                transform.position.y + amount.y, 
+                transform.position.z);
+        }
+
+        static public void AdjustPosition(this Transform transform, Vector3 amount)
+        {
+            transform.position = new Vector3(transform.position.x + amount.x, 
+                transform.position.y + amount.y, 
+                transform.position.z + amount.z);
+        }
+
+        static public void SetPosition2D(this Transform transform, float x, float y)
+        {
+            transform.position = new Vector3(x, y, transform.position.z);
+        }
+
+        static public void SetPosition2D(this Transform transform, Vector2 pos)
+        {
+            transform.position = new Vector3(pos.x, pos.y, transform.position.z);
+        }
+
+        static public void SetPosition3D(this Transform transform, float x, float y, float z)
+        {
+            transform.position = new Vector3(x, y, z);
+        }
+
         static public void SetAxisPosition(this Transform transform, Axis axis, float value)
         {
             switch (axis)
