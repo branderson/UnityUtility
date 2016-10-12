@@ -1,7 +1,6 @@
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.Scripts.Utility.Pooling
+namespace Assets.Utility.Pooling
 {
     /// <summary>
     /// MonoBehaviour that can be pooled

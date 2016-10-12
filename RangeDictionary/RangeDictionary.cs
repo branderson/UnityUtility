@@ -2,9 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Assets.Scripts.Utility.Tuple;
+using Assets.Utility.Tuple;
 
-namespace Assets.Scripts.Utility.RangeDictionary
+namespace Assets.Utility.RangeDictionary
 {
     /// <summary>
     /// Defines a range

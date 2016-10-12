@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.Scripts.Utility.Synchronized
+namespace Assets.Utility.Synchronized
 {
     /// <summary>
     /// MonoBehaviour with locks. Any access of an object should first be locked with SyncLock by the caller.

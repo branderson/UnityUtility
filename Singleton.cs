@@ -1,7 +1,7 @@
-using Assets.Scripts.Utility.Synchronized;
+using Assets.Utility.Synchronized;
 using UnityEngine;
 
-namespace Assets.Scripts.Utility
+namespace Assets.Utility
 {
     public static class SingletonSettings
     {

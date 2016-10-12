@@ -1,4 +1,4 @@
-namespace Assets.Scripts.Utility.Pooling
+namespace Assets.Utility.Pooling
 {
     public interface IPool
     {

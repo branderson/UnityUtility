@@ -1,8 +1,7 @@
-using Assets.Scripts.Utility.Synchronized;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.Scripts.Utility
+namespace Assets.Utility
 {
     public class CallFunctionOnEnable : SynchronizedMonoBehaviour
     {

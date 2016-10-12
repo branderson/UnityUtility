@@ -1,6 +1,6 @@
 using System;
 
-namespace Assets.Scripts.Utility
+namespace Assets.Utility
 {
     /// <summary>
     /// [Thread-safe] Random object which can be safely accessed across multiple threads

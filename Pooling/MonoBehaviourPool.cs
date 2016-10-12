@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Utility.Pooling
+namespace Assets.Utility.Pooling
 {
     /// <summary>
     /// Pool for PooledMonoBehaviours

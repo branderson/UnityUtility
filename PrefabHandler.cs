@@ -1,7 +1,6 @@
-using UnityEditor;
 using UnityEngine;
 
-namespace Assets.Scripts.Utility
+namespace Assets.Utility
 {
     /// <summary>
     /// [Unfinished] Maintains changes to spawned prefabs, while automatically updating the object to 

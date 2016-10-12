@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Assets.Scripts.Utility.Synchronized
+namespace Assets.Utility.Synchronized
 {
     [Serializable]
     public class SynchronizedList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable

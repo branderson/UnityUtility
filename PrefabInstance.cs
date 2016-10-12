@@ -2,10 +2,11 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEngine;
+
 #if UNITY_EDITOR
 #endif
 
-namespace Assets.Scripts.Utility
+namespace Assets.Utility
 {
     [ExecuteInEditMode]
     public class PrefabInstance : MonoBehaviour

@@ -8,7 +8,7 @@
 
 using System;
 
-namespace Assets.Scripts.Utility.Tuple
+namespace Assets.Utility.Tuple
 {
     /// <summary>
     /// Represents a functional tuple that can be used to store

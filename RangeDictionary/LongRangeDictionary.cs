@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Assets.Scripts.Utility.Tuple;
+using Assets.Utility.Tuple;
 using UnityEngine;
 
-namespace Assets.Scripts.Utility.RangeDictionary
+namespace Assets.Utility.RangeDictionary
 {
     /// <summary>
     /// Range dictionary with long values

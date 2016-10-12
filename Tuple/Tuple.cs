@@ -6,7 +6,7 @@
 // Note: .NET 4.0 Tuples are immutable classes so they're *slightly* different.
 // ----------------------------------------------------------------------------
 
-namespace Assets.Scripts.Utility.Tuple
+namespace Assets.Utility.Tuple
 {
     /// <summary>
     /// Utility class that simplifies cration of tuples by using
