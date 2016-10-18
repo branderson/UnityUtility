@@ -50,6 +50,34 @@ namespace Assets.Utility.Static
                 transform.position.z + amount.z);
         }
 
+        static public void AdjustLocalPosition(this Transform transform, float x, float y)
+        {
+            transform.localPosition = new Vector3(transform.position.x + x, 
+                transform.position.y + y, 
+                transform.position.z);
+        }
+
+        static public void AdjustLocalPosition(this Transform transform, float x, float y, float z)
+        {
+            transform.localPosition = new Vector3(transform.position.x + x, 
+                transform.position.y + y, 
+                transform.position.z + z);
+        }
+
+        static public void AdjustLocalPosition(this Transform transform, Vector2 amount)
+        {
+            transform.localPosition = new Vector3(transform.position.x + amount.x, 
+                transform.position.y + amount.y, 
+                transform.position.z);
+        }
+
+        static public void AdjustLocalPosition(this Transform transform, Vector3 amount)
+        {
+            transform.localPosition = new Vector3(transform.position.x + amount.x, 
+                transform.position.y + amount.y, 
+                transform.position.z + amount.z);
+        }
+
         static public void SetPosition2D(this Transform transform, float x, float y)
         {
             transform.position = new Vector3(x, y, transform.position.z);
