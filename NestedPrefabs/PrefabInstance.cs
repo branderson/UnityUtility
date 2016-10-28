@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.Callbacks;
 using UnityEngine;
 
 #if UNITY_EDITOR
+using UnityEditor;
+using UnityEditor.Callbacks;
 #endif
 
 namespace Assets.Utility.NestedPrefabs
