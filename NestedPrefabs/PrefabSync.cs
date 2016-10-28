@@ -6,6 +6,7 @@ using UnityEditor;
 
 namespace Assets.Utility.NestedPrefabs
 {
+#if UNITY_EDITOR
     /// <summary>
     /// [Unfinished] Allows prefabs to sync there changes back to their prefabs and from their prefabs when nested
     /// inside of other prefabs
@@ -42,7 +43,6 @@ namespace Assets.Utility.NestedPrefabs
         }
     }
 
-#if UNITY_EDITOR
     [CustomEditor(typeof (PrefabSync))]
     public class PrefabSyncEditor : UnityEditor.Editor
     {
