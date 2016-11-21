@@ -1,10 +1,19 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Utility
 {
+    
+    /// <summary>
+    /// MonoBehaviour-derived base class with useful methods for common calculations with vectors and transforms, 
+    /// as well as cached version of component access methods
+    /// </summary>
     public class CustomMonoBehaviour : MonoBehaviour
     {
         private Transform _transform;
+        private readonly Dictionary<Type, List<Component>> _cachedMonoBehaviours = new Dictionary<Type, List<Component>>(); 
 
         /// <summary>
         /// Caches transform the first time this is called
@@ -17,6 +26,80 @@ namespace Assets.Utility
                 _transform = base.transform;
                 return transform;
             }
+        }
+
+        /// <summary>
+        /// Returns the component of Type T if the game object has one attached, null if it doesn't. Attempts to 
+        /// find cached component first, otherwise caches all attached components of type T for future use
+        /// </summary>
+        /// <typeparam name="T">
+        /// Type of component to get
+        /// </typeparam>
+        /// <returns>
+        /// Component of type T attached to game object if one exists, null otherwise
+        /// </returns>
+        public T CachedGetComponent<T>() where T : Component
+        {
+            List<Component> mb;
+            if (_cachedMonoBehaviours.TryGetValue(typeof (T), out mb))
+            {
+                T component = mb.FirstOrDefault() as T;
+                if (component != null) return component;
+            }
+            List<T> components = base.GetComponents<T>().ToList();
+            if (components.Count != 0)
+            {
+                _cachedMonoBehaviours[typeof (T)] = components as List<Component>;
+            }
+            return components[0];
+        }
+
+        /// <summary>
+        /// Returns all components of Type type in the GameObject. Attempts to find cached components first, otherwise
+        /// caches the results for future use
+        /// </summary>
+        /// <typeparam name="T">
+        /// Type of component to get
+        /// </typeparam>
+        /// <returns>
+        /// Component of type T attached to game object if one exists, null otherwise
+        /// </returns>
+        public T[] CachedGetComponents<T>() where T : Component
+        {
+            List<Component> mb;
+            if (_cachedMonoBehaviours.TryGetValue(typeof (T), out mb))
+            {
+                return mb.ToArray() as T[];
+            }
+            T[] mbArr = base.GetComponents<T>();
+            if (mbArr != null)
+            {
+                _cachedMonoBehaviours[typeof (T)] = mbArr.ToList() as List<Component>;
+            }
+            return mbArr;
+        }
+
+        /// <summary>
+        /// Adds a component of type T to the game object, caching the result. Will not cache additional component 
+        /// added as a sideffect. 
+        /// </summary>
+        /// <typeparam name="T">
+        /// Type of component to add
+        /// </typeparam>
+        /// <returns>
+        /// Component added to game object
+        /// </returns>
+        public T CachedAddComponent<T>() where T : Component
+        {
+            T component = gameObject.AddComponent<T>();
+            List<Component> mb;
+            if (_cachedMonoBehaviours.TryGetValue(typeof (T), out mb))
+            {
+                mb.Add(component);
+                return component;
+            }
+            _cachedMonoBehaviours[typeof(T)] = new List<Component>() {component};
+            return component;
         }
 
         /// <summary>

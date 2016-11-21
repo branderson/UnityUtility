@@ -11,13 +11,27 @@ namespace Assets.Utility.Static
 
     static public class MethodExtensionForMonoBehaviourTransform {
         /// <summary>
-        /// Gets or add a component. Usage example:
+        /// Gets or adds a component. 
+        /// Usage example:
         /// BoxCollider boxCollider = transform.GetOrAddComponent<BoxCollider>();
         /// </summary>
         static public T GetOrAddComponent<T> (this Component child) where T: Component {
             T result = child.GetComponent<T>();
             if (result == null) {
                 result = child.gameObject.AddComponent<T>();
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Gets or adds a component, checking for a cached reference first, and caching the result if not found.
+        /// Usage example:
+        /// BoxCollider boxCollider = transform.CachedGetOrAddComponent<BoxCollider>();
+        /// </summary>
+        static public T CachedGetOrAddComponent<T> (this CustomMonoBehaviour child) where T: Component {
+            T result = child.CachedGetComponent<T>();
+            if (result == null) {
+                result = child.CachedAddComponent<T>();
             }
             return result;
         }
