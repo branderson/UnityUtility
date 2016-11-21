@@ -1,3 +1,5 @@
+using System;
+
 namespace Assets.Utility.Static
 {
     public class MathExtensions
@@ -5,6 +7,11 @@ namespace Assets.Utility.Static
         public static long Mod(long x, long m)
         {
             return (x%m + m)%m;
+        }
+
+        private static float Mod(float x, float m)
+        {
+            return x - m*(float)Math.Floor((double)x/m);
         }
     }
 }
