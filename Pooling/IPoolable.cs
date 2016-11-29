@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Assets.Utility.Pooling
 {
     public interface IPoolable

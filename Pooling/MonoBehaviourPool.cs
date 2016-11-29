@@ -9,12 +9,12 @@ namespace Assets.Utility.Pooling
     public class MonoBehaviourPool : CustomMonoBehaviour
     {
         [SerializeField] private PooledMonoBehaviour _pooledPrefab;
-        [SerializeField] protected List<IPoolable> _pooledObjects;
+        [SerializeField] protected List<PooledMonoBehaviour> _pooledObjects;
         private string _prefabString;
 
         public MonoBehaviourPool()
         {
-            _pooledObjects = new List<IPoolable>();
+            _pooledObjects = new List<PooledMonoBehaviour>();
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Assets.Utility.Pooling
             int lastAvailableIndex = _pooledObjects.Count - 1;
             if (lastAvailableIndex >= 0)
             {
-                obj = (PooledMonoBehaviour)_pooledObjects[lastAvailableIndex];
+                obj = _pooledObjects[lastAvailableIndex];
                 _pooledObjects.RemoveAt(lastAvailableIndex);
                 obj.gameObject.SetActive(true);
             }
@@ -85,6 +85,25 @@ namespace Assets.Utility.Pooling
                 obj.Pool = this;
             }
             return obj;
+        }
+
+        /// <summary>
+        /// Get multiple objects of the pool's type from the pool, creating them if not enough remaining
+        /// </summary>
+        /// <param name="count">
+        /// Number of instances to get
+        /// </param>
+        /// <returns>
+        /// List of pooled objects of the pool's type
+        /// </returns>
+        public List<PooledMonoBehaviour> GetObjects(int count)
+        {
+            List<PooledMonoBehaviour> instances = new List<PooledMonoBehaviour>();
+            for (int i = 0; i < count; i++)
+            {
+                instances.Add(GetObject());
+            }
+            return instances;
         }
 
         /// <summary>

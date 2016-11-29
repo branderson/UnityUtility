@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Assets.Utility.Pooling
@@ -60,7 +63,29 @@ namespace Assets.Utility.Pooling
             {
                 Pool = MonoBehaviourPool.GetPool(this);
             }
-            return (T) Pool.GetObject();
+            return Pool.GetObject() as T;
+        }
+
+        /// <summary>
+        /// Get a multiple pooled instances of this type
+        /// </summary>
+        /// <typeparam name="T">
+        /// Type to get instances of
+        /// </typeparam>
+        /// <param name="count">
+        /// Number of instances to get
+        /// </param>
+        /// <returns>
+        /// List of pooled instances of given type
+        /// </returns>
+        public List<T> GetPooledInstances<T>(int count) where T : PooledMonoBehaviour
+        {
+            if (Pool == null)
+            {
+                Pool = MonoBehaviourPool.GetPool(this);
+            }
+            List<T> instances = Pool.GetObjects(count).Select(item => item as T).ToList();
+            return instances;
         }
 
         private void LevelWasLoaded(Scene scene, LoadSceneMode mode)
