@@ -9,7 +9,7 @@ namespace Assets.Utility.Static
             return (x%m + m)%m;
         }
 
-        private static float Mod(float x, float m)
+        public static float Mod(float x, float m)
         {
             return x - m*(float)Math.Floor((double)x/m);
         }
