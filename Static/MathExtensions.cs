@@ -4,6 +4,11 @@ namespace Assets.Utility.Static
 {
     public class MathExtensions
     {
+        public static int Mod(int x, int m)
+        {
+            return (x%m + m)%m;
+        }
+
         public static long Mod(long x, long m)
         {
             return (x%m + m)%m;
