@@ -7,7 +7,7 @@ namespace Assets.Utility.Behaviours
     /// </summary>
     public class DestroyIfTagExists : MonoBehaviour
     {
-        public void Start()
+        public void Awake()
         {
             if (GameObject.FindGameObjectsWithTag(gameObject.tag).Length > 1)
             {
